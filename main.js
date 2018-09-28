@@ -1,5 +1,12 @@
 $(document).ready(function(){
 
-    // jQuery methods go here...
+    var counterRight = 0
+    var counterWrong = 0
+    
+    $('.play-button').on('click', () =>{
+        $('.play-area').removeClass('hide')
+    })
  
+
+
  });
