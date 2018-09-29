@@ -8,9 +8,15 @@ $(document).ready(function(){
         $('.playArea').removeClass('hide')
         $('.tutorial').addClass('hide')
     })
-    
+    $('.hint').on('click', event=>{
+
+        $(event.currentTarget).siblings().removeClass('hide')
+            
+    })
     $('.answer1').on('click', event =>{
         
+       
+
        answer = $('#ans1').val()
        if (answer.toLowerCase() == 'gucci' ) {
            counterRight++
@@ -23,6 +29,7 @@ $(document).ready(function(){
        $(event.currentTarget).parent().addClass('hide')
        $(event.currentTarget).parent().next().removeClass('hide')
         
+       
 
     })
 
