@@ -5,14 +5,24 @@ $(document).ready(function(){
     var answer = ''
     
     $('.play-button').on('click', () =>{
-        $('.playArea').removeClass('hide')
-        $('.tutorial').addClass('hide')
+        $('.playArea').fadeIn()
+        $('.tutorial').hide()
     })
-    $('.hint').on('click', event=>{
+    $('button').on('mouseenter', event=>{
+        $(event.currentTarget).addClass('button-active')
+        
+    }).on('mouseleave', event=>{
+        $(event.currentTarget).removeClass('button-active')
+    })
 
-        $(event.currentTarget).siblings().removeClass('hide')
+   
+
+    $('.hint').on('click', event =>{
+
+        $(event.currentTarget).prev().toggleClass('hide')
             
     })
+
     $('.answer1').on('click', event =>{
         
        
@@ -24,10 +34,10 @@ $(document).ready(function(){
            
        } else{
            counterWrong++
-           alert('Nope, Wrong!')
+           alert('Nope, wrong! It\'s Gucci! Do you live under a rock somewhere?')
        }
-       $(event.currentTarget).parent().addClass('hide')
-       $(event.currentTarget).parent().next().removeClass('hide')
+       $(event.currentTarget).parent().hide()
+       $(event.currentTarget).parent().next().fadeIn()
         
        
 
@@ -42,10 +52,10 @@ $(document).ready(function(){
             
         } else{
             counterWrong++
-            alert('Nope, wrong!')
+            alert('Nope, wrong! It\'s Louis Vuitton! This should\'ve been easy!')
         }
-        $(event.currentTarget).parent().addClass('hide')
-        $(event.currentTarget).parent().next().removeClass('hide')
+        $(event.currentTarget).parent().hide()
+        $(event.currentTarget).parent().next().fadeIn()
          
  
      })
@@ -58,10 +68,10 @@ $(document).ready(function(){
             
         } else{
             counterWrong++
-            alert('Nope, wrong!')
+            alert('Nope, wrong! It\'s Gosha Rubchinskiy! You could\'ve gotten it right if you can read cyrillic, you know?')
         }
-        $(event.currentTarget).parent().addClass('hide')
-        $(event.currentTarget).parent().next().removeClass('hide')
+        $(event.currentTarget).parent().hide()
+        $(event.currentTarget).parent().next().fadeIn()
          
  
      })
@@ -74,10 +84,10 @@ $(document).ready(function(){
             
         } else{
             counterWrong++
-            alert('Nope, wrong!')
+            alert('Nope, wrong! It\'s Balenciaga. Have you never seen this big, weird, ugly sneakers?')
         }
-        $(event.currentTarget).parent().addClass('hide')
-        $(event.currentTarget).parent().next().removeClass('hide')
+        $(event.currentTarget).parent().hide()
+        $(event.currentTarget).parent().next().fadeIn()
          
  
      })
@@ -90,10 +100,10 @@ $(document).ready(function(){
             
         } else{
             counterWrong++
-            alert('Nope, wrong!')
+            alert('Nope, wrong! It\'s Yves Saint Laurent. Didn\'t the big print on the bag make it obvious?')
         }
-        $(event.currentTarget).parent().addClass('hide')
-        $(event.currentTarget).parent().next().removeClass('hide')
+        $(event.currentTarget).parent().hide()
+        $(event.currentTarget).parent().next().fadeIn()
          
      })
      $('.answer6').on('click', event =>{
@@ -105,10 +115,10 @@ $(document).ready(function(){
             
         } else{
             counterWrong++
-            alert('Nope, wrong!')
+            alert('Nope, wrong! It\'s Burberry. Didn\'t you notice the checkered pattern?')
         }
-        $(event.currentTarget).parent().addClass('hide')
-        $(event.currentTarget).parent().next().removeClass('hide')
+        $(event.currentTarget).parent().hide()
+        $(event.currentTarget).parent().next().fadeIn()
          
  
      })
@@ -121,10 +131,10 @@ $(document).ready(function(){
            
        } else{
            counterWrong++
-           alert('Nope, wrong!')
+           alert('Nope, wrong! It\'s Fendi. You should\'ve noticed by the monster eye in the bag!')
        }
-       $(event.currentTarget).parent().addClass('hide')
-       $(event.currentTarget).parent().next().removeClass('hide')
+       $(event.currentTarget).parent().hide()
+       $(event.currentTarget).parent().next().fadeIn()
         
  
      })
@@ -137,10 +147,10 @@ $(document).ready(function(){
             
         } else{
             counterWrong++
-            alert('Nope, wrong!')
+            alert('Nope, wrong! It\'s Versace. Look at the medusa head!')
         }
-        $(event.currentTarget).parent().addClass('hide')
-        $(event.currentTarget).parent().next().removeClass('hide')
+        $(event.currentTarget).parent().hide()
+        $(event.currentTarget).parent().next().fadeIn()
          
  
      })
@@ -153,10 +163,10 @@ $(document).ready(function(){
             
         } else{
             counterWrong++
-            alert('Nope, wrong!')
+            alert('Nope, wrong! It\'s Yohji Yamamoto!')
         }
-        $(event.currentTarget).parent().addClass('hide')
-        $(event.currentTarget).parent().next().removeClass('hide')
+        $(event.currentTarget).parent().hide()
+        $(event.currentTarget).parent().next().fadeIn()
          
  
      })
@@ -169,16 +179,16 @@ $(document).ready(function(){
             
         } else{
             counterWrong++
-            alert('Nope, wrong!')
+            alert('Nope, wrong! It\'s Comme des Garcons. notice the heart with assymetric eyes logo?')
         }
-        $('.playArea').addClass('hide')
+        $('.playArea').hide()
         
         if (counterRight > counterWrong) {
-            $('.lose').addClass('hide')
-            $('.result').removeClass('hide')
+            $('.lose').hide()
+            $('.result').fadeIn()
         } else{
-            $('.win').addClass('hide')
-            $('.result').removeClass('hide')
+            $('.win').hide()
+            $('.result').fadeIn()
         }
          
      })

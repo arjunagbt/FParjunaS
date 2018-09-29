@@ -3,6 +3,7 @@ html, body{
     height: 100%;
     min-height: 600px;
     overflow: scroll;
+    background-image: linear-gradient(-45deg, #a7adba,#343d46);
 }
 
 .container{
@@ -14,18 +15,40 @@ html, body{
     grid-auto-flow: column dense;
     grid-gap: 12px;
     font-family: sans-serif;
+    color: rgb(233, 227, 227);
     align-items: center;
     justify-items: center;
     justify-content: space-evenly;
-    background-image: linear-gradient(-45deg, #f0f0e1,#ffffff);
+    margin-top: 20px;
     min-width: 720px;
     min-height: 600px;
     height: 100%;
+    text-align: left;
+    line-height: 25px;
+    letter-spacing: 1pt;
+}
+
+h4, h5{
+    text-align: center
+}
+
+p{
+    margin-left: 5px;
 }
 
 header{
     grid-area: header;
     float: left;
+}
+header p{
+
+    float: left;
+    padding: 20px;
+    letter-spacing: 2pt;
+    
+}
+.highlighted{
+    border-bottom: 2pt, solid, white;
 }
 
 main {
@@ -35,17 +58,27 @@ main {
     border: 1px solid black;
     border-radius: 10px;
     padding: 1px;
+    background-color: rgba(0, 0, 0, 0.2)
     
 }
 
+.playArea, .tutorial {
+    max-height: 390px;
+    overflow: auto;
+}
+
+.hintq {
+    margin: 0 auto;
+    text-align: center;
+    font-size: 11pt;
+}
 
 img {
     max-width: 250px;
     max-height: 250px;
-    padding: 20px;
+    margin: 20px auto;
     display: block;
-    margin-left: auto;
-    margin-right: auto;
+    border-radius: 10px;
 }
 
 footer{
@@ -58,4 +91,37 @@ footer{
 
 a{
     text-decoration: none;
+    color: rgb(233, 227, 227);
+    
+}
+
+a:hover{
+    background-color: #a7adba;
+    padding: 5px;
+    border-bottom: 1pt solid white;
+    border-radius: 5px;
+    
+}
+
+
+button{
+    display: block;
+    margin: 10px auto;
+    border-radius: 5px;
+    background-color: #343d46;
+    color: #f7f7f7;
+}
+
+.button-active{
+    background-color: #f7f7f7;
+    color: #343d46;
+}
+
+input {
+    display: block;
+    margin: 0 auto;
+}
+
+footer {
+    font-size: 10pt;
 }
